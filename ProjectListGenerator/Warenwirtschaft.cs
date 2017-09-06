@@ -1,24 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.Data.SqlClient;
 
 namespace ProjectListGenerator
 {
-    class Warenwirtschaft
+    internal class Warenwirtschaft
     {
         private DBConnector db;
         private Int32 id;
+
+        public Int32 Id
+        {
+            get
+            {
+                return this.id;
+            }
+        }
+
         private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set { }
+        }
 
         public Warenwirtschaft()
         {
             this.db = new DBConnector();
             this.db.Connect("copago1");
         }
+
         public Warenwirtschaft(int id, string name, DBConnector db)
         {
             this.db = db;
@@ -31,14 +46,19 @@ namespace ProjectListGenerator
             this.id = id;
             this.name = name;
         }
+
         public Warenwirtschaft(DBConnector db)
         {
             this.db = db;
         }
-        
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 
-    class WarenwirtschaftSet
+    internal class WarenwirtschaftSet
     {
         private DBConnector db;
 

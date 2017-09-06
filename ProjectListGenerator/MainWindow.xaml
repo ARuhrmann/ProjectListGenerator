@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="71,99,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding All}" DisplayMemberPath="{Binding Name}"/>
+        <ComboBox Name="cmbBox01" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" ItemsSource="{Binding All}" DisplayMemberPath="Name" SelectedValuePath="Id" SelectionChanged="cmbBox01_SelectionChanged"/>
     </Grid>
 </Window>

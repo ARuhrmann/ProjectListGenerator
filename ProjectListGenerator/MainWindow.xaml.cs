@@ -13,5 +13,10 @@ namespace ProjectListGenerator
             InitializeComponent();
             DataContext = new WarenwirtschaftSet();
         }
+
+        private void cmbBox01_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            Console.WriteLine("DEBUG: Selected Value: {0}", cmbBox01.SelectedValue.ToString());
+        }
     }
 }
